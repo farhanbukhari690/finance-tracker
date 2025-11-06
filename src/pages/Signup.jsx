@@ -23,7 +23,7 @@ export default function Signup() {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:4000/api/auth/register", formData);
+      const res = await axios.post("https://finance-tracker-backend-ashen.vercel.app/api/auth/register", formData);
 
       // Token save
       localStorage.setItem("token", res.data.token);

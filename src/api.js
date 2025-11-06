@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://finance-tracker-backend-ashen.vercel.app/",
+  baseURL: "finance-tracker-7vg51zwyf-farhan-bukharis-projects-5f032396.vercel.app",
 });
 
 // ✅ Automatically attach token (if logged in)

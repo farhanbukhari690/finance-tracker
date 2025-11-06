@@ -37,12 +37,12 @@ export default function Dashboard() {
         const token = localStorage.getItem("token");
         if (!token) return;
 
-        const txRes = await axios.get("http://localhost:4000/api/transactions", {
+        const txRes = await axios.get("https://finance-tracker-backend-ashen.vercel.app/api/transactions", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setTransactions(txRes.data);
 
-        const userRes = await axios.get("http://localhost:4000/api/users/me", {
+        const userRes = await axios.get("https://finance-tracker-backend-ashen.vercel.app/api/users/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (userRes.data.profilePic) {
@@ -71,7 +71,7 @@ export default function Dashboard() {
       formData.append("photo", file);
 
       const res = await axios.post(
-        "http://localhost:4000/api/users/upload-dp",
+        "https://finance-tracker-backend-ashen.vercel.app/api/users/upload-dp",
         formData,
         {
           headers: {
@@ -104,7 +104,7 @@ export default function Dashboard() {
       if (!token) return;
 
       const res = await axios.post(
-        "http://localhost:4000/api/transactions",
+        "https://finance-tracker-backend-ashen.vercel.app/api/transactions",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
